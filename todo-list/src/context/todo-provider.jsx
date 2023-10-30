@@ -6,7 +6,6 @@ function TodoProvider({ children }) {
   const [todos, setTodos] = useState([
     { id: 1, value: "Buy Chiken", status: false },
     { id: 2, value: "Buy Meat", status: true },
-    { id: 3, value: "Buy Water", status: false },
     { id: 3, value: "Buy Carrot", status: false },
   ]);
   const [todoInput, setTodoInput] = useState("");
