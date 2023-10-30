@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { TodoContext } from "../context/todo-provider";
-import axios from "axios";
+
 
 function TodoList (){
     const { todos, setTodos, setTodoInput, setIsEdit, setTodoEdit } =
@@ -52,10 +52,10 @@ function TodoList (){
     return (
         <>
         <div>
-            <div className="flex justify-between mb-5">
-                <button className="bg-gray-400 p-1 px-2 rounded-md focus:bg-gray-600 " onClick={() => handleClick("All")} >All</button> 
-                <button className="bg-gray-400 p-1 px-2 rounded-md focus:bg-gray-600 " onClick={() => handleClick("Active")}>Active</button>
-                <button className="bg-gray-400 p-1 px-2 rounded-md focus:bg-gray-600 " onClick={() => handleClick('Completed')}>Completed</button>
+            <div className="flex mb-5">
+                <button className="bg-gray-400 p-1 px-4 rounded-md mr-4 focus:bg-[#64CCC5]" onClick={() => handleClick("All")} >All</button> 
+                <button className="bg-gray-400 p-1 px-4 rounded-md mr-4 focus:bg-[#64CCC5]" onClick={() => handleClick("Active")}>Active</button>
+                <button className="bg-gray-400 p-1 px-4 rounded-md mr-4 focus:bg-[#64CCC5]" onClick={() => handleClick('Completed')}>Completed</button>
             </div>
             {filteredTodo().map((todo, index) => (
             <div key={todo.id} className={`flex items.center justify-between w-80 outline outline-1 outline-slate-400 px-2 mb-5 py-2 $`}>
@@ -68,7 +68,7 @@ function TodoList (){
                 </span>
                 </div>
                 <div>
-                    <button onClick={()=>handleEdit(todo)} className={todo.status ? "hidden" : ""}>✏️</button>
+                    <button onClick={()=>handleEdit(todo)} className={`mr-2 ${todo.status ? "hidden" : ""}`}>✏️</button>
                     <button onClick={()=>handleDelete(todo)} className={todo.status ? "hidden" : ""}>🗑️</button>
                 </div>
             </div>
